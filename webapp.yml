@@ -1,0 +1,47 @@
+apiVersion: apps/v1
+
+kind: Deployment
+
+metadata:
+
+    name: mongo
+
+    labels:
+
+        app: webapp-db
+
+        tier: frontend
+
+spec:
+
+    replicas: 1
+
+    selector:
+
+        matchlabels:
+
+            app: webapp-db
+
+            tier: frontend
+
+    templates:
+
+        metadata:
+
+            labels:
+
+                app: webapp-db
+
+                tier: frontend
+
+        spec:
+
+            containers:
+
+            - name: webapp
+
+              image: devopsedu/employee
+
+              ports:
+
+              - containerPort: 8888

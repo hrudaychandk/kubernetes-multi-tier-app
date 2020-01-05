@@ -1,0 +1,47 @@
+apiVersion: apps/v1
+
+kind: Deployment
+
+metadata:
+
+    name: mongo
+
+    labels:
+
+        app: webapp-db
+
+        tier: backend
+
+spec:
+
+    replicas: 1
+
+    selector:
+
+        matchlabels:
+
+            app: webapp-db
+
+            tier: backend
+
+    templates:
+
+        metadata:
+
+            labels:
+
+                app: webapp-db
+
+                tier: backend
+
+        spec:
+
+            containers:
+
+            - name: webapp
+
+              image: mongo
+
+              ports:
+
+              - containerPort: 27017
