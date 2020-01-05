@@ -4,7 +4,7 @@ kind: Service
 
 metadata:
 
-    name: mongoservice
+    name: mongo
 
 spec:
 
