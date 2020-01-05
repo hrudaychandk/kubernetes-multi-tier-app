@@ -24,7 +24,7 @@ spec:
 
             tier: backend
 
-    templates:
+    template:
 
         metadata:
 
